@@ -1,0 +1,487 @@
+@import url('https://db.onlinewebfonts.com/c/82848488b73a87d72f2436c02b9ab608?family=ONE+PIECE');
+
+@font-face {
+    font-family: "ONE PIECE";
+    src: url("https://db.onlinewebfonts.com/t/82848488b73a87d72f2436c02b9ab608.eot");
+    src: url("https://db.onlinewebfonts.com/t/82848488b73a87d72f2436c02b9ab608.eot?#iefix") format("embedded-opentype"),
+         url("https://db.onlinewebfonts.com/t/82848488b73a87d72f2436c02b9ab608.woff2") format("woff2"),
+         url("https://db.onlinewebfonts.com/t/82848488b73a87d72f2436c02b9ab608.woff") format("woff"),
+         url("https://db.onlinewebfonts.com/t/82848488b73a87d72f2436c02b9ab608.ttf") format("truetype"),
+         url("https://db.onlinewebfonts.com/t/82848488b73a87d72f2436c02b9ab608.svg#ONE PIECE") format("svg");
+}
+
+/* Default color scheme */
+$optionDefaultColours: #ED5565, #FC6E51, #FFCE54, #2ECC71, #5D9CEC, #AC92EC;
+
+/* General Styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+    background: transparent;
+    transition: 0.25s;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    height: 100vh;
+}
+
+body.dark {
+    background: #232223;
+    color: white;
+}
+
+.credit {
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+    color: inherit;
+}
+
+.background {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('img/luffyred.jpg');
+    background-size: cover;
+    filter: blur(10px);
+    z-index: -1;
+}
+
+.content {
+    position: relative;
+    z-index: 1;
+    padding: 20px;
+    margin: 0 auto;
+    max-width: 1000px; 
+    color: white;
+    height: 60vh;
+}
+
+.content h1{
+    font-family: "ONE PIECE";
+    text-align: center;
+    font-size: 35px;
+    text-shadow: 0 0 20px red, 0 0 40px red, 0 0 60px red;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px; /* Add some padding to the sides */
+    position: absolute;
+    width: 100%;
+    top: 0;
+    left: 0;
+    background: transparent; /* Ensure background is transparent */
+    z-index: 2; /* Ensure header is above other elements */
+}
+
+.logo {
+    font-size: 35px;
+    font-weight: bold;
+    font-family: "ONE PIECE";
+    color: white;
+    text-decoration: none;
+    cursor: pointer;
+    text-shadow: 0 0 20px red, 0 0 40px red, 0 0 60px red;
+    margin-left: 20px; /* Add some margin to the left */
+}
+
+.menu-icon {
+    font-size: 1.5em;
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: white;
+    margin-right: 20px; /* Add some margin to the right */
+}
+
+nav {
+    position: fixed;
+    top: 0;
+    right: 0;
+    height: 100%;
+    width: 250px;
+    background: rgba(255, 255, 255, 0.6);
+    box-shadow: -2px 0 5px rgba(0, 0, 0, 0.2);
+    backdrop-filter: blur(10px);
+    transform: translateX(100%);
+    transition: transform 0.3s ease;
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+nav ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    text-align: center;
+}
+
+nav ul li {
+    margin-bottom: 20px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #333;
+    font-size: 1.2em;
+    font-family: "ONE PIECE";
+}
+
+nav.show {
+    transform: translateX(0);
+}
+
+main {
+    padding: 20px;
+}
+
+.landing-page {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 70vh;
+    text-align: center;
+    font-family: "ONE PIECE";
+}
+
+.landing-page h2 {
+    animation: stretch 7s ease-in-out forwards;
+    position: relative;
+    font-size: 70px;
+    color: white;
+    text-shadow: 0 0 20px red, 0 0 40px red, 0 0 60px red;
+    margin: 0;
+}
+
+.landing-page h3 {
+    font-size: 30px;
+    margin-top: 10px;
+    margin-bottom: 0;
+}
+
+.home-content {
+    display: none;
+    padding: 20px 0;
+    height: 70vh;
+}
+.home-content h2{
+    font-family: "ONE PIECE";
+    text-align: center;
+    font-size: 35px;
+    text-shadow: 0 0 20px red, 0 0 40px red, 0 0 60px red;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes stretch {
+    0% {
+        transform: scaleY(1);
+    }
+    50% {
+        transform: scaleY(1.5);
+    }
+    100% {
+        transform: scaleY(1);
+    }
+}
+
+section {
+    display: none;
+    padding: 20px 0;
+    opacity: 0;
+    animation: fadeInSection 1s forwards;
+    box-shadow: #333;
+}
+
+@keyframes fadeInSection {
+    to {
+        opacity: 1;
+    }
+}
+
+/* Options */
+.options {
+    display: flex;
+    flex-direction: row;
+    justify-content: center; /* Center horizontally */
+    align-items: stretch;
+    overflow: hidden;
+    width: 100%; /* Set width to 100% */
+    max-width: 900px; /* Limit maximum width */
+    height: 400px;
+    margin: 0 auto; /* Center the container itself */
+}
+
+@for $i from 1 through 4 {
+    @media screen and (max-width: 798px - $i * 80px) {
+        .options {
+            min-width: calc(600px - #{$i * 80px});
+        }
+        .option:nth-child(#{6 - $i}) {
+            display: none;
+        }
+    }
+}
+
+
+.option {
+    position: relative;
+    overflow: hidden;
+    min-width: 60px;
+    margin: 10px;
+    border: 0px solid var(--defaultColor);
+    background: var(--optionBackground, var(--defaultBackground, #E6E9ED));
+    background-size: auto 120%;
+    background-position: center;
+    cursor: pointer;
+    transition: 0.5s cubic-bezier(0.05, 0.61, 0.41, 0.95);
+}
+
+@for $i from 1 through length($optionDefaultColours) {
+    .option:nth-child(#{$i}) {
+        --defaultBackground: #{nth($optionDefaultColours, $i)};
+    }
+}
+
+
+.option.active {
+    flex-grow: 10000;
+    transform: scale(1);
+    max-width: 600px;
+    margin: 0;
+    border-radius: 40px;
+    background-size: auto 100%;
+}
+
+.option.active .shadow {
+    box-shadow: inset 0 -120px 120px -120px black, inset 0 -120px 120px -100px black;
+}
+
+.option.active .label {
+    bottom: 20px;
+    left: 20px;
+}
+
+.option.active .label .info > div {
+    left: 0;
+    opacity: 1;
+}
+
+.option:not(.active) {
+    flex-grow: 1;
+    border-radius: 30px;
+}
+
+.option:not(.active) .shadow {
+    bottom: -40px;
+    box-shadow: inset 0 -120px 0 -120px black, inset 0 -120px 0 -100px black;
+}
+
+.option:not(.active) .label {
+    bottom: 10px;
+    left: 10px;
+}
+
+.option:not(.active) .label .info > div {
+    left: 20px;
+    opacity: 0;
+}
+
+.option .shadow {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 120px;
+    transition: 0.5s cubic-bezier(0.05, 0.61, 0.41, 0.95);
+}
+
+.option .label {
+    display: flex;
+    position: absolute;
+    right: 0;
+    height: 40px;
+    transition: 0.5s cubic-bezier(0.05, 0.61, 0.41, 0.95);
+}
+
+.option .label .icon {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    min-width: 40px;
+    max-width: 40px;
+    height: 40px;
+    border-radius: 100%;
+    background-color: rgb(228, 153, 153);
+    color: var(--defaultBackground);
+    position: relative; /* Add this */
+}
+
+.option .label .icon span {
+    position: absolute; /* Add this */
+    top: 50%; /* Add this */
+    left: 50%; /* Add this */
+    transform: translate(-50%, -50%); /* Add this */
+}
+
+
+.option .label .info {
+    display: flex;
+    flex-direction: column;
+    margin-left: 10px;
+    color: white;
+    white-space: pre;
+    font-family: monospace;
+}
+
+.option .label .info > div {
+    position: relative;
+    transition: 0.5s cubic-bezier(0.05, 0.61, 0.41, 0.95), opacity 0.5s ease-out;
+}
+
+.option .label .info .main {
+    font-weight: bold;
+    font-size: 1.2rem;
+}
+
+.option .label .info .sub {
+    transition-delay: 0.1s;
+}
+.container {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    transform-style: preserve-3d;
+    perspective: 500px;
+    margin: 70px 0 0;
+  }
+  .container .box {
+    position: relative;
+    width: 275px;
+    height: 275px;
+    background: #000;
+    transition: 0.5s;
+    transform-style: preserve-3d;
+    overflow: hidden;
+    margin-right: 15px;
+    margin-top: 45px;
+  }
+  .container:hover .box {
+    transform: rotateY(25deg);
+  }
+  .container .box:hover ~ .box {
+    transform: rotateY(-25deg);
+  }
+  .container .box:hover {
+    transform: rotateY(0deg) scale(1.25);
+    z-index: 1;
+    box-shadow: 0 25px 40px rgba(0,0,0,0.5);
+  }
+  .container .box .imgBx {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
+  .container .box .imgBx:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(180deg,#f00,#000);
+    z-index: 1;
+    opacity: 0;
+    transition: 0.5s;
+    mix-blend-mode: multiply;
+  }
+  .container .box:hover .imgBx:before {
+    opacity: 1;
+  }
+  .container .box .imgBx img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  .container .box .content {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    display: flex;
+    padding: 20px;
+    align-items: flex-end;
+    box-sizing: border-box;
+  }
+  .container .box .content h2 {
+    color: #fff;
+    transition: 0.5s;
+    text-transform: uppercase;
+    margin-bottom: 5px;
+    font-size: 20px;
+    transform: translateY(200px);
+    transition-delay: 0.3s;
+  }
+  .container .box:hover .content h2 {
+    transform: translateY(0px);
+  }
+  .container .box .content p {
+    color: #fff;
+    transition: 0.5s;
+    font-size: 14px;
+    transform: translateY(200px);
+    transition-delay: 0.4s;
+  }
+  .container .box:hover .content p {
+    transform: translateY(0px);
+  }
+/* Responsive Styles */
+@media only screen and (max-width: 600px) {
+    nav {
+        width: 200px;
+    }
+}
+
+/* Responsive Orientation Styles */
+@media (orientation: landscape) {
+    .background {
+        background-position: center center;
+    }
+}
+
+@media (orientation: portrait) {
+    .background {
+        background-position: center top;
+    }
+}
